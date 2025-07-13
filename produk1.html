@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cheesecake - Harmoni Senja</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cheesecake</h1>
+      <img
+        src="images/produk1.jpg"
+        alt="Cheesecake"
+        style="width: 300px; border-radius: 10px"
+      />
+      <p><strong>Harga:</strong> IDR 25K</p>
+      <p>
+        Cheesecake lembut dengan lapisan keju krim yang creamy, cocok untuk
+        menemani soremu yang manis. Terbuat dari bahan premium, tekstur halus,
+        dan rasa yang menggoda.
+      </p>
+      <a href="#" class="btn" onclick="addToCart('Cheesecake', 25000)"
+        >Beli Sekarang</a
+      >
+    </div>
+
+    <script>
+      function addToCart(name, price) {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${name} ditambahkan ke keranjang!`);
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
